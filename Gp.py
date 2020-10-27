@@ -14,8 +14,9 @@ def GP(prb):
         total = total + value
         value = value * r
         ans.append(str(value))
+    print(total)
     res = str(total)+','+' '.join(ans)
     return res
     
 #print("\nThe Sum of Geometric Progression Series = " , total)
-#print(GP('7, 6, 3'))
+#print(GP('1, 6, 2'))

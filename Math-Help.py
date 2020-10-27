@@ -2,9 +2,9 @@
 from tkinter import *
 import tkinter as tk
 import tkinter.messagebox
-from sympy import symbols, Eq, solve
 from lineq import Problemr
 from Ap import AP
+from Gp import GP
 
 #Font styles
 TITLE_FONT = ('Courier New', 18, 'bold')
@@ -29,7 +29,7 @@ class App(tk.Tk):
         
         #Frame Navigation
         self.frames = {} #dictionary to store frame name and properties
-        for F in (MathHelp, LinerEQ, Series, ApSeries, GpSeries):#,  math2, math3, math4
+        for F in (MathHelp, LinerEQ, Series, ApSeries, GpSeries):
             page_name = F.__name__
             frame = F(container, self)
             self.frames[page_name] = frame
@@ -111,7 +111,7 @@ class LinerEQ(tk.Frame):
         else:
               tkinter.messagebox.showerror('Invalid Input','Enter valid input accorting to fromat specified')
 
-
+#Series frame class
 class Series(tk.Frame):
     
     def __init__(self, parent, controller):
@@ -131,7 +131,7 @@ class Series(tk.Frame):
         self.btn_mm.pack(side='bottom')
 
 
-
+#Ap frame class
 class ApSeries(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)  
@@ -176,6 +176,7 @@ class ApSeries(tk.Frame):
         else:
               tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
 
+#Gp frame class
 class GpSeries(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)  
@@ -205,7 +206,7 @@ class GpSeries(tk.Frame):
         self.btn_mm.pack(side='bottom')   
     
     def Problem(self, prb):
-        ans = AP(prb) #from Ap module calling AP function
+        ans = GP(prb) #from Ap module calling AP function
         return ans # returning to ShowAnswer funtion
     
     #Taking the input from entry widget and calling the logic to solve
@@ -215,7 +216,7 @@ class GpSeries(tk.Frame):
             ans = self.Problem(user_input)
             ans = ans.split(',')
             #Display answer in messagebox
-            tkinter.messagebox.showinfo('Sum of AP Series = {ans[0]}\nGenrated series: {ans[1]}')
+            tkinter.messagebox.showinfo('Your answer is', f'Sum of GP Series = {ans[0]}\nGenrated series: {ans[1]}')
         #ehcek if the input is empty
         else:
               tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
