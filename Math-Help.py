@@ -64,13 +64,7 @@ class MathHelp(tk.Frame):
 
         self.L2Button = tk.Button(self,text='Series',bg='orange2',width=20, height=5, command=lambda: controller.show_frame('Series'))
         self.L2Button.pack()
-'''
-        self.L3Button = tk.Button(self,text='Level 3',bg='OrangeRed3',command=lambda: controller.show_frame('math3'))
-        self.L3Button.pack()
-
-        self.L4Button = tk.Button(self,text='Level 4',bg='red3',command=lambda: controller.show_frame('math4'))
-        self.L4Button.pack() 
-'''        
+       
 
 #Liner equations frame class    
 class LinerEQ(tk.Frame):
@@ -167,14 +161,17 @@ class ApSeries(tk.Frame):
     #Taking the input from entry widget and calling the logic to solve
     def ShowAnswer(self):
         user_input = self.e1.get()+','+self.e2.get()+','+self.e3.get()
-        if user_input != '':
-            ans = self.Problem(user_input)
+        ans = self.Problem(user_input)
+        if user_input != '' and ans != 'invalid':
             ans = ans.split(',')
             #Display answer in messagebox
             tkinter.messagebox.showinfo('Your answer is', f'Last Term of AP Series = {ans[0]}\nSum of AP Series = {ans[1]}\nGenrated series: {ans[2]}')
         #ehcek if the input is empty
         else:
-              tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
+            if ans == 'invalid':
+                tkinter.messagebox.showerror('Invalid Input','Enter Valid values')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
 
 #Gp frame class
 class GpSeries(tk.Frame):
@@ -212,14 +209,17 @@ class GpSeries(tk.Frame):
     #Taking the input from entry widget and calling the logic to solve
     def ShowAnswer(self):
         user_input = self.e1.get()+','+self.e2.get()+','+self.e3.get()
-        if user_input != '':
-            ans = self.Problem(user_input)
+        ans = self.Problem(user_input)
+        if user_input != '' and ans != 'invalid':
             ans = ans.split(',')
             #Display answer in messagebox
             tkinter.messagebox.showinfo('Your answer is', f'Sum of GP Series = {ans[0]}\nGenrated series: {ans[1]}')
-        #ehcek if the input is empty
+        #Chcek if the input is empty
         else:
-              tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
+            if ans == 'invalid':
+                tkinter.messagebox.showerror('Invalid Input','Enter Valid values')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
            
                 
 #Main loop control 
