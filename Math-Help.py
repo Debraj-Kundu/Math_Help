@@ -15,7 +15,6 @@ FORMAT_FONT = ('Courier New', 18, 'bold')
 
 #Main App
 class App(tk.Tk):
-    
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         self.title('MathHelp')
