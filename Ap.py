@@ -1,6 +1,6 @@
 
 #Logic by Siddhant Singh
-#Debuging, errorhandling and parsing by Debraj Kundu
+#Debugging, errorhandling and parsing by Debraj Kundu
 def AP(prb):
     a = prb.split(',')[0]
     n = prb.split(',')[1]

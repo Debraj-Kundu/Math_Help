@@ -115,13 +115,18 @@ class LinerEQ(tk.Frame):
     #Taking the input from entry widget and calling the logic to solve
     def ShowAnswer(self):
         user_input = self.e.get()
-        if user_input != '':
-            ans = self.Problem(user_input)
+        ans = self.Problem(user_input)
+        if user_input != '' and ans != 'invalid' and ans != 'coma' and ans != 'eq': 
             #Display answer in messagebox
             tkinter.messagebox.showinfo('Your answer is', f'x = {ans[0]}\ny = {ans[1]}')
         #ehcek if the input is empty
         else:
-              tkinter.messagebox.showerror('Invalid Input','Enter valid input accorting to fromat specified')
+            if ans == 'coma':
+                tkinter.messagebox.showerror('Invalid Input','Put a comma in between the equations')
+            elif ans == 'eq':
+                tkinter.messagebox.showerror('Invalid Input','You need to have an equality operator for it to be an equation')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input accorting to fromat specified')
 
 #Series frame class by Siddhant Singh and Debraj Kundu
 class Series(tk.Frame):

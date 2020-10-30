@@ -1,5 +1,5 @@
 #Logic by Siddhant Singh
-#Debuging, errorhandling and parsing by Debraj Kundu
+#Debugging, errorhandling and parsing by Debraj Kundu
 
 def GP(prb):
     a = prb.split(',')[0]
