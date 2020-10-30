@@ -12,7 +12,7 @@ def Problemr(prb):
         if string_1.find('=') == -1:
             return 'eq'
         string_2 = inp[1]
-        if string_2.find(',') == -1:
+        if string_2.find('=') == -1:
             return 'eq'
         #Storing LHS of equation
         lhs = string_1.split('=')[0]

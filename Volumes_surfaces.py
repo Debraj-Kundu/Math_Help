@@ -49,7 +49,7 @@ def hollow_sphere(Or,Ir):
     osa=format(osa,".2f") 
     isa=format(isa,".2f") 
     tsa=format(tsa,".2f")             #tsa=Total surface area
-    volume=4*math.pi*pow(Or-Ir,3)/3
+    volume=(4*math.pi*pow(Or-Ir,3))/3
     volume=format(volume,".2f")       #format function is used for converting the value to 2 decimal points in each function format functionallity is same
     return(osa,isa,tsa,volume)
 
@@ -72,16 +72,16 @@ def cylinder(r,h):
 def hollow_cylinder(Ir,Or,h):
     if not Ir.lstrip('-').isdigit() or not h.lstrip('-').isdigit() or not Or.lstrip('-').isdigit() or Ir == '' or h == '' or Or == '':
         return 'invalid'
-    Ir=float(Ir)                     # Ir= Inner radius
-    Or=float(Or)                     # Or = Outer radius
-    h=float(h)                       # h = hieght
+    Ir=int(Ir)                     # Ir= Inner radius
+    Or=int(Or)                     # Or = Outer radius
+    h=int(h)                       # h = hieght
     if Ir < 0 or h < 0 or Or < 0:
         return 'negative'
     Ocsa=2*math.pi*Or*h              # Ocsa = outer surface area
     Icsa=2*math.pi*Ir*h              # Icsa = Inner surface area
     Rsa=math.pi*pow((Or-Ir),2)*2     # Rsa = ring surface area formed on top and bottom
     tsa=Ocsa+Icsa+Rsa                # tsa = Total surface area
-    volume=math.pi*h(pow(Or,2)-pow(Ir,2))
+    volume=math.pi*h*(pow(Or,2)-pow(Ir,2))
     return(Ocsa,Icsa,tsa,volume)
 
 def cone(h,r):

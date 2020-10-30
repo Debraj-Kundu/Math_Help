@@ -116,15 +116,13 @@ class LinerEQ(tk.Frame):
     def ShowAnswer(self):
         user_input = self.e.get()
         ans = self.Problem(user_input)
-        if user_input != '' and ans != 'invalid' and ans != 'coma' and ans != 'eq': 
+        if user_input != '' and ans != 'invalid' and ans != 'coma': 
             #Display answer in messagebox
             tkinter.messagebox.showinfo('Your answer is', f'x = {ans[0]}\ny = {ans[1]}')
         #ehcek if the input is empty
         else:
             if ans == 'coma':
                 tkinter.messagebox.showerror('Invalid Input','Put a comma in between the equations')
-            elif ans == 'eq':
-                tkinter.messagebox.showerror('Invalid Input','You need to have an equality operator for it to be an equation')
             else:
                 tkinter.messagebox.showerror('Invalid Input','Enter valid input accorting to fromat specified')
 
