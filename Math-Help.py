@@ -22,7 +22,8 @@ FORMAT_FONT = ('Courier New', 18, 'bold')
 INSTRUCTION_FONT=('Arial',10,'bold')
 SERIES_FONT=('times new roman',12)
 
-#Main App by Debraj Kundu
+
+# Main App by Debraj Kundu
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
@@ -434,7 +435,13 @@ class volume_area(tk.Frame):
         a=self.e1.get()    #gets values present in entry widgets and passes them in hollow_sphere function
         b=self.e2.get()
         answers=hollow_sphere(a,b)  # calling imported function hollow_sphere from volume_surface.py
-        tkinter.messagebox._show("Results:",f'Outer Surface Area : {answers[0]}\n\nInner Surface Area : {answers[1]}\n\nTotal Surface Area : {answers[2]}\n\nVolume : {answers[3]} ')
+        if answers != 'invalid' and answers != 'negative':
+            tkinter.messagebox._show("Results:",f'Outer Surface Area : {answers[0]}\n\nInner Surface Area : {answers[1]}\n\nTotal Surface Area : {answers[2]}\n\nVolume : {answers[3]} ')
+        else:
+            if answers == 'negative':
+                tkinter.messagebox.showerror('Invalid Input','Value cannot be negative')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
     def Hollow_Sphere(self):                        # gettting widgets on screen for Hollow_sphere 
         instruction=tk.Label(self,text="Enter the Required values and click on 'Get Details'.Click on [Solve Another ] \nbutton to calcute for other shapes.",font=INSTRUCTION_FONT)
         instruction.place(x=30,y=430)
@@ -456,7 +463,13 @@ class volume_area(tk.Frame):
         a=self.e1.get()
         b=self.e2.get()
         answers=cylinder(a,b)
-        tkinter.messagebox._show("Results:",f'Curved Surface Area : {answers[0]}\n\nTotal Surface Area : {answers[1]}\n\nVolume : {answers[2]}\n\n ')
+        if answers != 'invalid' and answers != 'negative':
+            tkinter.messagebox._show("Results:",f'Curved Surface Area : {answers[0]}\n\nTotal Surface Area : {answers[1]}\n\nVolume : {answers[2]}\n\n ')
+        else:
+            if answers == 'negative':
+                tkinter.messagebox.showerror('Invalid Input','Value cannot be negative')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
     def Cylinder(self):                             # gettting widgets on screen for Cylinder 
         instruction=tk.Label(self,text="Enter the Required values and click on 'Get Details'.Click on [Solve Another ] \nbutton to calcute for other shapes.",font=INSTRUCTION_FONT)
         instruction.place(x=30,y=430)
@@ -480,7 +493,13 @@ class volume_area(tk.Frame):
         b=self.e2.get() 
         c=self.e3.get()
         answers=hollow_cylinder(a,b,c)   # calling imported function hollow_cylinder from volume_surfaces.py
-        tkinter.messagebox._show("Results:",f'Outer Curved Surface Area : {answers[0]}\n\nInner Curved Surface Area : {answers[1]}\n\nTotal Surface Area : {answers[2]}\n\nVolume : {answers[3]} ')
+        if answers != 'invalid' and answers != 'negative':
+            tkinter.messagebox._show("Results:",f'Outer Curved Surface Area : {answers[0]}\n\nInner Curved Surface Area : {answers[1]}\n\nTotal Surface Area : {answers[2]}\n\nVolume : {answers[3]} ')
+        else:
+            if answers == 'negative':
+                tkinter.messagebox.showerror('Invalid Input','Value cannot be negative')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
     def Hollow_Cylinder(self):                      # gettting widgets on screen for Hollow_cylinder 
         instruction=tk.Label(self,text="Enter the Required values and click on 'Get Details'.Click on [Solve Another ] \nbutton to calcute for other shapes.",font=INSTRUCTION_FONT)
         instruction.place(x=30,y=430)
@@ -508,7 +527,13 @@ class volume_area(tk.Frame):
         a=self.e1.get()          # getting values from entry widgets and passing them as arguments in cone function
         b=self.e2.get() 
         answers=cone(a,b)         # calling imported function cone from volume_surfaces.py
-        tkinter.messagebox._show("Results:",f'Total Surface Area : {answers[0]}\n\nVolume :{answers[1]}')
+        if answers != 'invalid' and answers != 'negative':
+            tkinter.messagebox._show("Results:",f'Total Surface Area : {answers[0]}\n\nVolume :{answers[1]}')
+        else:
+            if answers == 'negative':
+                tkinter.messagebox.showerror('Invalid Input','Value cannot be negative')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
     def Cone(self):                                 # gettting widgets on screen for Cone 
         instruction=tk.Label(self,text="Enter the Required values and click on 'Get Details'.Click on [Solve Another ] \nbutton to calcute for other shapes.",font=INSTRUCTION_FONT)
         instruction.place(x=30,y=430)
@@ -532,7 +557,13 @@ class volume_area(tk.Frame):
         b=self.e2.get()
         c=self.e3.get()
         answers=frustum(a,b,c)  # calling imported function frustum from volume_surfaces.py
-        tkinter.messagebox._show("Results:",f'Lateral Surface Area : {answers[0]}\n\nTotal Surface Area : {answers[1]}\n\nVolume : {answers[2]} ')
+        if answers != 'invalid' and answers != 'negative':
+            tkinter.messagebox._show("Results:",f'Lateral Surface Area : {answers[0]}\n\nTotal Surface Area : {answers[1]}\n\nVolume : {answers[2]} ')
+        else:
+            if answers == 'negative':
+                tkinter.messagebox.showerror('Invalid Input','Value cannot be negative')
+            else:
+                tkinter.messagebox.showerror('Invalid Input','Enter valid input in all fields')
     def Frustum(self):                              # gettting widgets on screen for Frustum 
         instruction=tk.Label(self,text="Enter the Required values and click on 'Get Details'.Click on [Solve Another ] \nbutton to calcute for other shapes.",font=INSTRUCTION_FONT)
         instruction.place(x=30,y=430)
