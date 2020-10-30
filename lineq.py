@@ -1,5 +1,6 @@
 from sympy import symbols, Eq, solve
 
+#By Debraj Kundu
 
 def Problemr(prb):
         x, y = symbols('x y')
