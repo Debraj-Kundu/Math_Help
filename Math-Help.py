@@ -15,7 +15,6 @@ from Volumes_surfaces import cube,cone,cuboid,sphere,hollow_sphere,cylinder,holl
 
 #Font styles
 TITLE_FONT = ('Times New Roman', 25, 'italic bold')                              # font style changed to 'Times new roman' from 'Courier New' by Sourav 
-TITLE_FONT = ('Courier New', 18, 'bold')
 SUBTITLE_FONT =('Courier New', 15, 'bold')
 APP_FONT = ('Courier New', 12)
 FORMAT_FONT = ('Courier New', 18, 'bold')
@@ -62,7 +61,7 @@ class MathHelp(tk.Frame):
         self.controller = controller
         #UI configurations
         self.title = tk.Label(self, text = 'Math Help',fg='maroon' ,font=('times new roman',32,'italic bold'))
-        self.title.place(x=190,y=40)
+        self.title.place(x=210,y=40)
         self.book = tk.Label(self, text='Welcome to Math Help..! A Program to ease your math \ncalculations.Get solutions of Quadratic Eqations,Linear Equations,\nVolumes & Areas and Series.',fg='red',font=('Times new roman',12,'bold'))       
         self.book.place(x=40,y=120)                   # added by sourav  
         self.select = tk.Label(self, text='Select what you want to solve!', fg='green',font=('arial',14,'bold'))
